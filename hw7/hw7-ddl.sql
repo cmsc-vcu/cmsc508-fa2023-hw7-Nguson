@@ -60,14 +60,11 @@ INSERT INTO skills (skills_id, skills_name, skills_description, skills_tag, skil
     (8, 'running', 'marathon runner', 'Skill 8', 'running.com', 35);
 
 
-SELECT * FROM skills
-
 # Section 4
 # Create people( id,first_name, last_name, email, linkedin_url, headshot_url, discord_handle, brief_bio, date_joined)
 # ID cannot be null, Last name cannot be null, date joined cannot be NULL.
 # All other fields can default to NULL.
 
-DROP TABLE IF EXISTS people
 CREATE TABLE people (
     people_id int NOT NULL,
     people_first_name varchar(255),
@@ -98,13 +95,11 @@ insert into people (people_first_name, people_last_name, people_email, people_li
   ('Karin', 'Person 9', 'karin@example.com', 'https://www.linkedin.com/in/karin', 'https://example.com/karin.jpg', 'karin#7788', 'I am Person 9. Greetings!', '2023-09-15'),
   ('Beckham', 'Person 10', 'beckham@example.com', 'https://www.linkedin.com/in/beckham', 'https://example.com/beckham.jpg', 'beckham#9900', 'I am Person 10. Welcome!', '2023-10-05');
 
-SELECT * FROM people
 
 # Section 6
 # Create peopleskills( id, skills_id, people_id, date_acquired )
 # None of the fields can ba NULL. ID can be auto_increment.
 
-DROP TABLE IF EXISTS peopleskills;
 CREATE TABLE peopleskills (
     id int not null auto_increment,
     skills_id int not null,
@@ -142,10 +137,6 @@ INSERT into peopleskills (skills_id, people_id, date_acquired ) values
   (2, 9, '2023-09-18'), (5, 9, '2023-09-18'), (6, 9, '2023-09-18'),
   (1, 10, '2023-10-10'), (4, 10, '2023-10-10'), (5, 10, '2023-10-10');
    
-
-
-
-SELECT * FROM peopleskills
 
 SELECT 
     people_first_name,
