@@ -66,7 +66,7 @@ INSERT INTO skills (skills_id, skills_name, skills_description, skills_tag, skil
 # All other fields can default to NULL.
 
 CREATE TABLE people (
-    people_id int default(0) NOT NULL,
+    people_id int  NOT NULL,
     people_first_name varchar(255),
     people_last_name varchar(256) NOT NULL,
     people_email varchar(256),
@@ -83,17 +83,17 @@ CREATE TABLE people (
 # Their last names must exactly be “Person 1”, “Person 2”, etc.
 # Other fields are for you to assign.
 
-insert into people (people_first_name, people_last_name, people_email, people_linkedin_url, people_headshot_url, people_discord_handle, people_brief_bio, people_date_joined) values 
- ('Nguyen', 'Person 1', 'nguyen@example.com', 'https://www.linkedin.com/in/nguyen', 'https://example.com/nguyen.jpg', 'nguyen#1234', 'I am Person 1. Nice to meet you!', '2023-01-01'),
-  ('John', 'Person 2', 'john@example.com', 'https://www.linkedin.com/in/john', 'https://example.com/john.jpg', 'john#5678', 'I am Person 2. Hello!', '2023-02-15'),
-  ('Smith', 'Person 3', 'smith@example.com', 'https://www.linkedin.com/in/smith', 'https://example.com/smith.jpg', 'smith#9876', 'I am Person 3. Greetings!', '2023-03-20'),
-  ('Brady', 'Person 4', 'brady@example.com', 'https://www.linkedin.com/in/brady', 'https://example.com/brady.jpg', 'brady#6543', 'I am Person 4. Welcome!', '2023-04-10'),
-  ('Agholor', 'Person 5', 'agholor@example.com', 'https://www.linkedin.com/in/agholor', 'https://example.com/agholor.jpg', 'agholor#3210', 'I am Person 5. How are you?', '2023-05-05'),
-  ('Badguy', 'Person 6', 'badguy@example.com', 'https://www.linkedin.com/in/badguy', 'https://example.com/badguy.jpg', 'badguy#1122', 'I am Person 6. Good day!', '2023-06-18'),
-  ('Mahomes', 'Person 7', 'mahomes@example.com', 'https://www.linkedin.com/in/mahomes', 'https://example.com/mahomes.jpg', 'mahomes#3344', 'I am Person 7. Nice to see you!', '2023-07-02'),
-  ('Purdy', 'Person 8', 'purdy@example.com', 'https://www.linkedin.com/in/purdy', 'https://example.com/purdy.jpg', 'purdy#5566', 'I am Person 8. Hows it going?', '2023-08-23'),
-  ('Karin', 'Person 9', 'karin@example.com', 'https://www.linkedin.com/in/karin', 'https://example.com/karin.jpg', 'karin#7788', 'I am Person 9. Greetings!', '2023-09-15'),
-  ('Beckham', 'Person 10', 'beckham@example.com', 'https://www.linkedin.com/in/beckham', 'https://example.com/beckham.jpg', 'beckham#9900', 'I am Person 10. Welcome!', '2023-10-05');
+insert into people (people_id, people_first_name, people_last_name, people_email, people_linkedin_url, people_headshot_url, people_discord_handle, people_brief_bio, people_date_joined) values 
+  (1, 'Nguyen', 'Person 1', 'nguyen@example.com', 'https://www.linkedin.com/in/nguyen', 'https://example.com/nguyen.jpg', 'nguyen#1234', 'I am Person 1. Nice to meet you!', '2023-01-01'),
+  (2, 'John', 'Person 2', 'john@example.com', 'https://www.linkedin.com/in/john', 'https://example.com/john.jpg', 'john#5678', 'I am Person 2. Hello!', '2023-02-15'),
+  (3, 'Smith', 'Person 3', 'smith@example.com', 'https://www.linkedin.com/in/smith', 'https://example.com/smith.jpg', 'smith#9876', 'I am Person 3. Greetings!', '2023-03-20'),
+  (4, 'Brady', 'Person 4', 'brady@example.com', 'https://www.linkedin.com/in/brady', 'https://example.com/brady.jpg', 'brady#6543', 'I am Person 4. Welcome!', '2023-04-10'),
+  (5, 'Agholor', 'Person 5', 'agholor@example.com', 'https://www.linkedin.com/in/agholor', 'https://example.com/agholor.jpg', 'agholor#3210', 'I am Person 5. How are you?', '2023-05-05'),
+  (6, 'Badguy', 'Person 6', 'badguy@example.com', 'https://www.linkedin.com/in/badguy', 'https://example.com/badguy.jpg', 'badguy#1122', 'I am Person 6. Good day!', '2023-06-18'),
+  (7, 'Mahomes', 'Person 7', 'mahomes@example.com', 'https://www.linkedin.com/in/mahomes', 'https://example.com/mahomes.jpg', 'mahomes#3344', 'I am Person 7. Nice to see you!', '2023-07-02'),
+  (8, 'Purdy', 'Person 8', 'purdy@example.com', 'https://www.linkedin.com/in/purdy', 'https://example.com/purdy.jpg', 'purdy#5566', 'I am Person 8. Hows it going?', '2023-08-23'),
+  (9, 'Karin', 'Person 9', 'karin@example.com', 'https://www.linkedin.com/in/karin', 'https://example.com/karin.jpg', 'karin#7788', 'I am Person 9. Greetings!', '2023-09-15'),
+  (10, 'Beckham', 'Person 10', 'beckham@example.com', 'https://www.linkedin.com/in/beckham', 'https://example.com/beckham.jpg', 'beckham#9900', 'I am Person 10. Welcome!', '2023-10-05');
 
 
 # Section 6
@@ -105,7 +105,7 @@ CREATE TABLE peopleskills (
     skills_id int not null,
     people_id int not null,
     date_acquired date default (current_date),
-    primary key (id),
+    primary key (id);
 
 );
 
