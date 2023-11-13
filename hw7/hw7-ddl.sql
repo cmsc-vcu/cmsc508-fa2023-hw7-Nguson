@@ -69,15 +69,15 @@ SELECT * FROM skills
 
 DROP TABLE IF EXISTS people
 CREATE TABLE people (
-    people_id int auto_increment NOT NULL,
+    people_id int NOT NULL,
     people_first_name varchar(255),
     people_last_name varchar(256) NOT NULL,
-    people_email varchar(255),
-    people_linkedin_url varchar(255),
-    people_headshot_url varchar(255),
-    people_discord_handle varchar(255),
+    people_email varchar(256),
+    people_linkedin_url varchar(256),
+    people_headshot_url varchar(256),
+    people_discord_handle varchar(256),
     people_brief_bio varchar(255),
-    people_date_joined date NOT NULL default(current_date),
+    people_date_joined date default(current_date) NOT NULL,
     PRIMARY KEY (people_id)
 );
 
