@@ -66,7 +66,7 @@ INSERT INTO skills (skills_id, skills_name, skills_description, skills_tag, skil
 # All other fields can default to NULL.
 
 CREATE TABLE people (
-    people_id int NOT NULL,
+    people_id int default(1) NOT NULL,
     people_first_name varchar(255),
     people_last_name varchar(256) NOT NULL,
     people_email varchar(256),
@@ -137,29 +137,6 @@ INSERT into peopleskills (skills_id, people_id, date_acquired ) values
   (2, 9, '2023-09-18'), (5, 9, '2023-09-18'), (6, 9, '2023-09-18'),
   (1, 10, '2023-10-10'), (4, 10, '2023-10-10'), (5, 10, '2023-10-10');
    
-
-SELECT 
-    people_first_name,
-    people_last_name,
-    skills_name,
-    skills_tag
-FROM
-    peopleskills a
-    inner join people b on (a.people_id=b.people_id)
-    inner join skills c on (a.skills_id=c.skills_id)
-ORDER BY
-    skills_name,
-    people_last_name
-;
-
-SELECT 
-    people_last_name
-FROM
-    people a
-        LEFT JOIN peopleskills b on(a.people_id=b.people_id)
-WHERE
-b.people_id is NULL
-;
 
 # Section 8
 # Create roles( id, name, sort_priority )
