@@ -66,7 +66,7 @@ INSERT INTO skills (skills_id, skills_name, skills_description, skills_tag, skil
 # All other fields can default to NULL.
 
 CREATE TABLE people (
-    people_id int default(1) NOT NULL,
+    people_id int default(0) NOT NULL,
     people_first_name varchar(255),
     people_last_name varchar(256) NOT NULL,
     people_email varchar(256),
@@ -106,9 +106,6 @@ CREATE TABLE peopleskills (
     people_id int not null,
     date_acquired date default (current_date),
     primary key (id),
-    foreign key (skills_id) references skills (skills_id),
-    foreign key (people_id) references people (people_id),
-    unique (skills_id, people_id)
 
 );
 
