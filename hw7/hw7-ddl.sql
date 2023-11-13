@@ -105,7 +105,7 @@ CREATE TABLE peopleskills (
     skills_id int not null,
     people_id int not null,
     date_acquired date default (current_date),
-    primary key (id);
+    primary key (id)
 
 );
 
